@@ -1,0 +1,5 @@
+#!bin/bash
+#copy folder into target folder
+cp -r $1 $2
+#remove old folder
+rm -rf $1
