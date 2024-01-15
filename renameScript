@@ -1,0 +1,23 @@
+#!/bin/bash
+#check script arguments
+if [ $# -ne 2 ]
+then
+        echo "2 arguments are needed, old file name and new file name"
+        exit 1
+fi
+    
+#check if file exists
+if [ ! -f "$1" ]
+then
+        echo "Error! $1 does not exist or not a file"
+        exit 1
+fi
+
+if cp $1 $2 && rm -f $1
+then
+        echo "File $1 was renamed to $2"
+        exit 0
+else
+        echo "Error! Something went wrong!"
+        exit 1
+fi
